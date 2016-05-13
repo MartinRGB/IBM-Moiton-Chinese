@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="designsite" ng-controller="mobileNavigationController">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="x-ua-compatible" content="IE=edge">
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?eff2d0807d58b3afb909b86ee1af0214";
+	  var s = document.getElementsByTagName("script")[0];
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+	<!--!
+
+        __██████__                    ██   ██                #██#          #██#
+      ██████████████                 █  █ █  █              █    █        █    █
+   █████###IBM####█████               ██   ██               █    █        █    █
+  ██                  ██                                     #██#          #██#
+        ██████████                 █  ███████  █
+     ████#DESIGN#████         █   █             █   █       #█████#      #█████#
+   ████#####/\#####████     █    █  ███████████  █    █     █████ #██  ██# █████
+  █████####    ####█████    █   █                 █   █     █████   #██#   █████
+   ████#####\/#####████      ██     ███████████    ██       #████          ████#
+     ████LANGUAGE████                                        ████          ████
+        ██████████                   █████████               ████          ████
+
+                                    JOIN OUR TEAM
+                       http://www.ibm.com/design/careers.shtml
+
+  ████████████
+  ███████████████                                  ███
+  ███         █████                                ███
+  ███           ████
+  ███            ████    ████████      ████████    ███    ██████  ██  ██  █████
+  ███             ███   ██████████    ██████████   ███   ███████████  ███████████
+  ███             ███  ███      ███  ███           ███  ███      ███  ███      ███
+  ███            ████  ████████████  ████████████  ███  ███      ███  ███      ███
+  ███           ████   ████████████  ████████████  ███  ███      ███  ███      ███
+  ███         █████    ███                    ███  ███  ███      ███  ███      ███
+  ███████████████       ██████████    ██████████   ███   ███████████  ███      ███
+  ████████████           ████████      ████████    ███    ██████████  ███      ███
+                                                                 ███
+                                                         ███████████
+                                                          █████████
+
+-->
+	<meta name="viewport" content="initial-scale=1,minimal-ui">
+	<link rel="schema.DC" href="http://purl.org/DC/elements/1.0/">
+	<link rel="SHORTCUT ICON" href="../../../../favicon.ico">
+	<meta name="DC.Rights" content="© Copyright IBM Corp. 2014">
+	<meta name="DC.Date" scheme="iso8601" content="2014-11-14">
+	<meta name="Source" content="IBM Design technical, delivery:IBM authoring:IBM">
+	<meta name="Security" content="Public">
+	<meta name="IBM.Effective" scheme="W3CDTF" content="2014-11-14">
+	<meta name="DC.Subject" scheme="IBM_SubjectTaxonomy" content="ZZ999">
+	<meta name="Owner" content="Phil Gilbert/Austin/IBM">
+	<meta name="DC.Language" scheme="rfc1766" content="en">
+	<meta name="IBM.Country" content="ZZ">
+	<meta name="DC.Type" scheme="IBM_ContentClassTaxonomy" content="CTZZZ">
+	<meta name="og:site_name" property="og:site_name" content="IBM Design Language">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:creator" content="@ibmdesign">
+	<meta name="twitter:site" content="@ibmdesign">
+	<meta name="Robots" content="index,follow">
+	<meta name="Keywords" content="ibm,ibm design,ibm design language,design language,design,experience,visual,interaction,front end,layout,typography,iconography,color,information architecture,touch,motion,resources,inspiration, IBM animation, user engagement, design interaction, animation building blocks, UI animation, user interface animation, product animation, machine motion style, animation best practices, animation workflow, animation tutorial, translate animation video to code, animation examples, IBM animation style, IBM animation code, software animation, product animation">
+	<meta name="Description" content="Learn how IBM products move with the accuracy and precision of a machine.">
+	<meta name="Abstract" content="Learn how IBM products move with the accuracy and precision of a machine.">
+	<meta name="og:description" property="og:description" content="Learn how IBM products move with the accuracy and precision of a machine.">
+	<meta name="twitter:description" content="Learn how IBM products move with the accuracy and precision of a machine.">
+	<title>IBM Design Language | Animation: Fundamentals</title>
+	<meta name="og:title" property="og:title" content="IBM Design Language | Animation: Fundamentals">
+	<meta name="twitter:title" content="IBM Design Language | Animation: Fundamentals">
+	<meta name="og:url" property="og:url" content="http://www.ibm.com/design/language/framework/animation/fundamentals">
+	<meta name="og:type" property="og:type" content="website">
+	<meta name="og:image" property="og:image" content="http://www.ibm.com/design/language/images/social/og_animation.png">
+	<meta name="twitter:image" content="http://www.ibm.com/design/language/images/social/og_animation.png">
+	<link rel="stylesheet" href="../../app-cacheBust=0wGFcFAgAaT5AwNEA1LvcQ==.css">
+
+	<body class="page-color-teal" ng-class="{&quot;no-scroll&quot;: mobileNavVisibility}" mobile-nav-closer>
+		<header role="banner" aria-label="Site header" scroll-fix>
+			<div class="fixed contain-to-grid">
+				<nav class="top-bar" role="navigation" aria-label="Site">
+					<div class="title-area">
+						<div class="navbar-brand">
+							<button id="hamburger-icon" class="hamburger-icon" ng-class="{&quot;mobile-nav-visible&quot; : mobileNavVisibility}" aria-label="Navigation menu" title="Navigation menu" ng-click="toggleMobileNavVisibility()"></button>
+							<div class="mobile-nav" ng-class="{visible : mobileNavVisibility, hidden : !mobileNavVisibility}">
+								<div id="mobile-nav-container" class="mobile-nav-container">
+									<ul class="nav-list nav-level-0" role="tablist">
+
+										<li class="nav-item nav-level-0 accordion-navigation">
+											<div id="mobile-framework-panel" class="nav-content nav-level-0 content"
+												role="tabpanel" aria-labelledby="mobile-framework-heading">
+												<ul class="nav-list nav-level-1 accordion" data-accordion role="tablist" ng-cloak>
+
+								<li class="nav-item nav-level-1 accordion-navigation active"><a href="fundamentals.html#mobile-framework-animation-panel" class="nav-anchor nav-level-1" role="tab" id="mobile-framework-animation-heading" aria-controls="mobile-framework-animation-panel" tabindex="0"><span class="nav-title">动画</span></a>
+									<div
+										id="mobile-framework-animation-panel" class="nav-content nav-level-1 content active" role="tabpanel" aria-labelledby="mobile-framework-animation-heading">
+										<ul class="nav-list nav-level-2 accordion" data-accordion role="tablist">
+											<li class="nav-item nav-level-2"><span><a class="nav-anchor nav-level-2" role="tab" href="introduction.html" tabindex="0"><span class="nav-title">简介</span></a>
+												</span>
+											</li>
+											<li class="nav-item nav-level-2 active"><span><a class="nav-anchor nav-level-2" role="tab" href="fundamentals.html" tabindex="0"><span class="nav-title">设计基础</span></a>
+												</span>
+											</li>
+											<li class="nav-item nav-level-2"><span><a class="nav-anchor nav-level-2" role="tab" href="process.html" tabindex="0"><span class="nav-title">设计流程</span></a>
+												</span>
+											</li>
+										</ul>
+							</div>
+							</li>
+
+						</ul>
+					</div>
+					</li>
+					</ul>
+			</div>
+			</div>
+			<div class="navbar-brand-heading"><a href="http://www.ibm.com/design/" target="_blank" title="IBM Design">IBM <b>Design</b></a> <a href="http://www.ibm.com/design/language/" target="_blank" title="Language" id="navbar-brand-language"><b>Language</b></a></div>
+			</nav>
+			</div>
+		</header>
+		<div class="main" role="main">
+			<!--[if lte IE 9]><div class="old-ie-warning">
+          This site is not optimized for Internet Explorer 9 and older. Please upgrade if you can, or use a different modern browser.
+        </div><![endif]-->
+			<!--[if lt IE 9]><div style="display:none"><![endif]-->
+			<div class="content-wrapper" ng-controller="frameworkController">
+				<div class="dp-framework-hero" id="framework-hero">
+					<div class="framework-header-hero">
+						<div class="framework-header-hero-nav hero-height" role="navigation" aria-label="Framework"><a href="fundamentals.html#" class="hero-nav-placeholder" hero-nav-tab-placeholder ng-show="isPastFrameworkHero">Framework navigation</a> <a href="fundamentals.html#" class="hero-nav-placeholder" hero-nav-backtab-placeholder ng-show="isPastFrameworkHero">Framework navigation</a>
+							<ul
+								class="hero-nav nav-list nav-level-0 show-for-large-up accordion" data-accordion ng-class="{ dangly: isPastFrameworkHero }" role="tablist">
+								<li class="nav-item nav-level-0 accordion-navigation active dangly-activator" ng-class="{active: !isPastFrameworkHero}"><a href="fundamentals.html#dangly-panel" class="nav-anchor nav-level-0" role="tab" id="dangly-heading" aria-controls="dangly-panel" tabindex="-1" title="Navigation menu" aria-label="Navigation menu"><span class="hamburger-icon"></span></a>
+									<div
+										id="dangly-panel" class="nav-content nav-level-0 content active dangly-activator" role="tabpanel" aria-labelledby="dangly-heading" ng-class="{active: !isPastFrameworkHero}">
+										<ul class="nav-list nav-level-1 accordion" data-accordion role="tablist">
+
+											<li class="nav-item nav-level-1 accordion-navigation active"><a href="fundamentals.html#dangly-animation-panel" class="nav-anchor nav-level-1" role="tab" id="dangly-animation-heading" aria-controls="dangly-animation-panel" tabindex="0"><span class="nav-title">动画</span></a>
+												<div id="dangly-animation-panel"
+													class="nav-content nav-level-1 content active" role="tabpanel" aria-labelledby="dangly-animation-heading">
+													<ul class="nav-list nav-level-2 accordion" data-accordion role="tablist">
+														<li class="nav-item nav-level-2"><span><a class="nav-anchor nav-level-2" role="tab" href="introduction.html" tabindex="0"><span class="nav-title">简介</span></a>
+															</span>
+														</li>
+														<li class="nav-item nav-level-2 active"><span><a class="nav-anchor nav-level-2" role="tab" href="fundamentals.html" tabindex="0"><span class="nav-title">设计基础</span></a>
+															</span>
+														</li>
+														<li class="nav-item nav-level-2"><span><a class="nav-anchor nav-level-2" role="tab" href="process.html" tabindex="0"><span class="nav-title">设计流程</span></a>
+															</span>
+														</li>
+													</ul>
+												</div>
+											</li>
+
+										</ul>
+						</div>
+						</li>
+						</ul>
+					</div>
+					<div class="framework-header-main">
+						<section role="region" class="framework-image" aria-labelledby="dp-hero-heading">
+							<div class="framework-header-main-column">
+								<h1 id="dp-hero-heading">设计基础</h1>
+								<p>动画为界面注入活力，并且让用户能够清晰的感受到在操作之后，元素之前、之后与过渡的变化</p>
+								<ul class="small-block-grid-2 medium-block-grid-3 hero-links">
+									<li><a href="fundamentals.html#basics" du-smooth-scroll duration="1000" offset="75">基础属性</a></li>
+									<li><a href="fundamentals.html#style" du-smooth-scroll duration="1000" offset="75">风格化</a></li>
+									<li><a href="fundamentals.html#timing" du-smooth-scroll duration="1000" offset="75">时间</a></li>
+									<li><a href="fundamentals.html#rationale" du-smooth-scroll duration="1000" offset="75">动画原则</a></li>
+								</ul>
+							</div>
+						</section>
+						<div class="framework-header-hero-flourish">
+							<div class="color-bar-flourish"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<section role="region" id="direct-and-intentional" aria-labelledby="direct-and-intentional-heading" class="color-bar-section framework-color-grey">
+				<div class="row large-up-vertical-align-columns">
+					<div class="large-push-5 small-offset-2 small-8 medium-offset-3 medium-6 large-3 large-offset-2 columns"><img src="../../images/framework/animation/ani-foundation-direct.gif" alt=""></div>
+					<div class="large-pull-3 medium-10 medium-offset-1 large-offset-0 large-5 end columns">
+						<h2 id="direct-and-intentional-heading">直接 有意图</h2>
+						<p>在设计思考之后进行动画设计，所设计的动画应该直接明了，告知用户屏幕中最重要的元素，当用户操作时，给予指引。</p>
+					</div>
+				</div>
+			</section>
+			<div class="row">
+				<section role="region" id="basics" aria-labelledby="basics-heading" class="large-8 large-offset-2 columns general-section">
+					<h2 id="basics-heading" class="header"><span class="section-colored-heading-text">基础属性</span> 决定了动画的根基。</h2>
+					<h4 class="colored-sub-header">构建模块</h4>
+					<p>基础属性是界面动画的构建模块，这些基础属性动画可以单独使用，也可以组合使用。</p>
+					<div class="row">
+						<div class="medium-push-8 mobile-closer medium-4 split-column columns">
+							<div class="row collapse">
+								<div class="columns small-offset-2 small-8 medium-offset-0 medium-12">
+									<gif-player class="gif-player" start-img="../../images/framework/animation/ani-foundation-position@2x.png" start-img-alt="" animated-img="../../images/framework/animation//ani-foundation-position@2x.gif" animated-img-alt=""
+										play-label="Play position animation" stop-label="Stop position animation" alt="An animation of a block on a grid moving up and down the x and y axis, and then toward the user on the z-axis">
+										<button role="button" class="play-button stopped" title="Play position animation">
+											<div class="overlay"></div>
+											<div class="overlay-image"></div><img src="../../images/framework/animation/ani-foundation-position@2x.png" alt=""></button>
+									</gif-player>
+								</div>
+							</div>
+						</div>
+						<div class="medium-pull-4 mobile-closer medium-8 split-column columns">
+							<h5 class="gray-sub-header">位置</h5>
+							<p>当物体被放置在坐标轴中，坐标轴可以有效的对比出物体的运动路径。位置移动可以受到力比如说阻力、推理和重力的影响。</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="medium-push-8 mobile-closer medium-4 split-column columns">
+							<div class="row collapse">
+								<div class="columns small-offset-2 small-8 medium-offset-0 medium-12">
+									<gif-player class="gif-player" start-img="../../images/framework/animation/ani-foundation-scale@2x.png" start-img-alt="" animated-img="../../images/framework/animation/ani-foundation-scale@2x.gif" animated-img-alt="" play-label="Play scale animation"
+										stop-label="Stop scale animation" alt="An animation of a block elongating across the x-axis and then the y-axis, and then elongating across both the x and y-axes to form a larger block">
+										<button role="button" class="play-button stopped" title="Play scale animation">
+											<div class="overlay"></div>
+											<div class="overlay-image"></div><img src="../../images/framework/animation/ani-foundation-scale@2x.png" alt=""></button>
+									</gif-player>
+								</div>
+							</div>
+						</div>
+						<div class="medium-pull-4 mobile-closer medium-8 split-column columns">
+							<h5 class="gray-sub-header">比例</h5>
+							<p>物体的相对尺寸变化可以让物体在空间中看起来更近或者更远，也可以突出元素的重要性，抓住用户的视觉焦点。</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="medium-push-8 mobile-closer medium-4 split-column columns">
+							<div class="row collapse">
+								<div class="columns small-offset-2 small-8 medium-offset-0 medium-12">
+									<gif-player class="gif-player" start-img="../../images/framework/animation/ani-foundation-rotate@2x.png" start-img-alt="" animated-img="../../images/framework/animation/ani-foundation-rotate@2x.gif" animated-img-alt="" play-label="Play rotate animation"
+										stop-label="Stop rotate animation" alt="Animation showing a square rotating clockwise">
+										<button role="button" class="play-button stopped" title="Play rotate animation">
+											<div class="overlay"></div>
+											<div class="overlay-image"></div><img src="../../images/framework/animation/ani-foundation-rotate@2x.png" alt=""></button>
+									</gif-player>
+								</div>
+							</div>
+						</div>
+						<div class="medium-pull-4 mobile-closer medium-8 split-column columns">
+							<h5 class="gray-sub-header">旋转</h5>
+							<p>物体沿着轴线旋转可以有效的暗示用户系统中的某些元素发生了改变或者将要发生改变。</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="medium-push-8 mobile-closer medium-4 split-column columns">
+							<div class="row collapse">
+								<div class="columns small-offset-2 small-8 medium-offset-0 medium-12">
+									<gif-player class="gif-player" start-img="../../images/framework/animation/ani-foundation-opacity@2x.png" start-img-alt="" animated-img="../../images/framework/animation/ani-foundation-Opacity@2x.gif" animated-img-alt=""
+										play-label="Play opacity animation" stop-label="Stop opacity animation" alt="Animation of a square fading in and out">
+										<button role="button" class="play-button stopped" title="Play opacity animation">
+											<div class="overlay"></div>
+											<div class="overlay-image"></div><img src="../../images/framework/animation/ani-foundation-opacity@2x.png" alt=""></button>
+									</gif-player>
+								</div>
+							</div>
+						</div>
+						<div class="medium-pull-4 mobile-closer medium-8 split-column columns">
+							<h5 class="gray-sub-header">不透明度</h5>
+							<p>在移动的物体中加入不透明度动画，可以让转场更佳流畅，也可以让元素变得更加凸显</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="medium-push-8 mobile-closer medium-4 split-column columns">
+							<gif-player class="gif-player" start-img="../../images/framework/animation/ani-foundation-hierarchy@2x.png" start-img-alt="" animated-img="../../images/framework/animation/ani-foundation-Hierarchy@2x.gif" animated-img-alt=""
+								play-label="Play hierarchy animation" stop-label="Stop hierarchy animation" alt="Animation of squares appearing to form the basic layout of a webpage">
+								<div class="row">
+									<div class="small-8 small-offset-2 medium-12 medium-offset-0 columns">
+										<button role="button" class="play-button stopped" title="Play hierarchy animation">
+											<div class="overlay"></div>
+											<div class="overlay-image"></div><img src="../../images/framework/animation/ani-foundation-hierarchy@2x.png" alt=""></button>
+									</div>
+								</div>
+							</gif-player>
+						</div>
+						<div class="medium-pull-4 mobile-closer medium-8 split-column columns">
+							<h5 class="gray-sub-header">层次感</h5>
+							<p>运动的层次感可以用来显现出指引路径，也可以用来显示动画的布局，或者显示出屏幕中的信息层级，让用户的视觉焦点逐渐靠拢到重要的信息上。</p>
+						</div>
+					</div>
+					<h4 class="colored-sub-header">动画可行性</h4>
+					<h5 class="gray-sub-header">给予用户控制的机会</h5>
+					<p>必须充分考虑到用户的心理和物理行为。超过5秒的动画，必须提供暂停、停止、隐藏的功能，以免播久了用户心烦意乱。如果动画带有音频，超过3秒，那么提供音频控制，以便让使用屏幕阅读软件的用户可以理解内容。</p>
+					<h5 class="gray-sub-header">不要太突兀</h5>
+					<p>不要制作过于突兀过快的动画，看起来会非常的闪，动画制作的要让用户易于察觉。</p>
+				</section>
+			</div>
+			<div class="row">
+				<div class="large-8 large-offset-2 columns">
+					<hr>
+				</div>
+			</div>
+			<div class="row">
+				<section role="region" id="style" aria-labelledby="style-heading" class="large-8 large-offset-2 columns general-section">
+					<h2 id="style-heading" class="header"><span class="section-colored-heading-text">风格化</span> 决定了动画的气质，赋予机器的运动感。</h2>
+					<h4 class="colored-sub-header">灵感源自机器</h4>
+					<p><a href="http://www-03.ibm.com/ibm/history/ibm100/us/en/" target="_blank" class="inline-link">100年来，IBM</a> 在全球各地生为专业用户生产商用机器。我们从打字机中印码杆猛烈的撞击中，以及打字机托架微妙的横滑中获取到了丰富的灵感，机器运动中往往蕴含着目的与意图，让整个系统运转自如。同样地，我们设计软件也有着同样的需求——我们的动画必须有意图，必须在细节上让用户感到真实。</p>
+					<h4 class="colored-sub-header">机器运动的风格化元素</h4>
+					<div class="row split-column">
+						<div class="split-column columns medium-6 large-6">
+							<h5 class="gray-sub-header">灵活</h5>
+							<p>设计出来的动画要有优雅的缓动曲线，富有节奏感和韵律感，让运动灵巧活泼。 </p>
+						</div>
+						<div class="split-column columns medium-6 large-6">
+							<h5 class="gray-sub-header">高效</h5>
+							<p>设计出来的动画要极具效率，而且要最小化所花费的时间。</p>
+						</div>
+					</div>
+					<div class="row split-column">
+						<div class="split-column columns medium-6 large-6">
+							<h5 class="gray-sub-header">精确</h5>
+							<p>设计出来的动画的移动感要精确感十足，尤其是我们的设计灵感来自人造机器</p>
+						</div>
+						<div class="split-column columns medium-6 large-6">
+							<h5 class="gray-sub-header">有序</h5>
+							<p>设计出来的动画要和谐一致。高优先级的元素先运动，低优先级的紧随其后。</p>
+						</div>
+					</div>
+					<h4 class="colored-sub-header">运动中的IBM机器</h4>
+					<div class="vimeo-container">
+						<video width="100%" height="100%" controls>
+							<source src="../../images/framework/animation/video1.mp4" type="video/mp4">
+						</video>
+					</div>
+					<h5 class="gray-sub-header">IBM Executive electric typewriter</h5>
+					<p>我们的侧拉菜单动画深受 IBM 打字机托架移动的影响。我们从机器运动中感受到运动的精确感，纸托架平滑的横向移动，返回到左边缘，而且每次听下的地方都位置一致。</p>
+					<div class="vimeo-container">
+						<video width="100%" height="100%" controls>
+							<source src="../../images/framework/animation/video2.mp4" type="video/mp4">
+						</video>
+					</div>
+					<h5 class="gray-sub-header">IBM 729 Magnetic Tape Unit</h5>
+					<p>磁带机有节奏的旋转，让我们思考用户的等待体验。当用户观察搜索结果加载动画时，旋转的过程展示系统正在运作，优雅的旋转暗示它正在工作，正在完成进度。 </p>
+					<div class="vimeo-container">
+						<video width="100%" height="100%" controls>
+							<source src="../../images/framework/animation/video3.mp4" type="video/mp4">
+						</video>
+					</div>
+					<h5 class="gray-sub-header">IBM 2560 Multi-function Card Machine</h5>
+					<p>多功能卡片机滑动给予了我们制作移动端下拉效果的灵感。当卡片从漏斗中迅速的弹射出来的时候，会迅速的移动。而当卡片移出的时候卡片会在拐弯处暂停一会儿，然后迅速移走。</p>
+					<div class="row collapse drilldown-container">
+						<a href="http://www.ibm.com/design/language/resources/animation-library" target="_blank" title="Animation library" class="resources-link">
+							<div class="drilldown clearfix">
+								<div class="medium-8 columns"><span>查看</span>
+									<h2>代码动画库<svg class="resource-box-style-teal" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 18" enable-background="new 0 0 24 18" focusable="false"><path d="M8.4 18l9-9-9-9-1.8 1.9 7 7.1-7 7.1z"/></svg></h2></div>
+								<div class="medium-4 show-for-medium-up columns drilldown-image"><img src="../../images/resources/resources-ani-library.svg" alt="Animation library"></div>
+							</div>
+						</a>
+					</div>
+				</section>
+			</div>
+			<div class="row">
+				<div class="large-8 large-offset-2 columns">
+					<hr>
+				</div>
+			</div>
+			<div class="row">
+				<section role="region" id="timing" aria-labelledby="timing-heading" class="large-8 large-offset-2 columns general-section">
+					<h2 id="timing-heading" class="header"><span class="section-colored-heading-text">时间</span> 与距离的关系决定了动画的个性</h2>
+					<h4 class="colored-sub-header">完美的结合</h4>
+					<p>时间和距离时动画的原子单位。两者以不同的方式结合，赋予动画以不同的个性。即便是细微的改动，动画的风格也可能从紧凑不安变为愉悦舒缓。注意细节，争取让动画的质感变得舒服。</p>
+					<p>使用恰当的速度，让用户能够感到运动自然，元素自然的出现小时。当运动过快会导致沮丧感，当运动过慢，会让用户感到不快。例如移动设备上的列表滚动，加入一点点缓动，让整体的滚动看起来具有惯性，效果就好很多。缓动曲线是动画的关键点，能有效的将意图传达给用户。</p>
+					<h4 class="colored-sub-header">设计过渡</h4>
+					<p>当一个元素从一个点移动到另一个点的时候，要确定的是运动时间和运动曲线。定义“过渡”主要定义的是行为切换之间所产生的种种动画。过渡告诉了我们2张静态线框图之间发生了怎样的运动，有效的反馈了交互。一般来说过渡都有一个主角，会在转场中保留并凸显这一元素。</p>
+					<p>当设计过渡类动画的时候，你需要问你自己：</p>
+					<ul>
+						<li>什么元素在两个场景中是通用的？</li>
+						<li>这一元素是怎样根据时间而变化的？</li>
+						<li>所创建的动画是否有效的指明了转场效果，反馈了交互？</li>
+					</ul>
+					<h4 class="colored-sub-header">延迟</h4>
+					<p>延迟指的是动画延期执行，延迟期间不发生任何运动。延迟可以有效的帮助构建富有层次感的动画和转场。延迟效果应该加在相似的内容元素上，以保证动画的一致性。</p>
+					<h4 class="colored-sub-header">案例</h4>
+					<h5 class="gray-sub-header">Ease in</h5>
+					<p>Ease in动画在开始时速度很慢，逐渐加速。Ease in动画可以构建优雅的加速运动感，可以和Ease out结合，让Ease out补充一些减速感。</p>
+					<div
+						class="row" ng-controller="easingExampleController">
+						<div class="small-10 small-offset-1 easing-example easing-type-slow-in">
+							<div class="animation-container">
+								<div class="animation-zone">
+									<div class="frame-trails">
+										<div class="frame"></div>
+										<div class="frame"></div>
+										<div class="frame"></div>
+										<div class="frame"></div>
+										<div class="frame"></div>
+										<div class="frame"></div>
+										<div class="frame"></div>
+										<div class="frame"></div>
+										<div class="frame"></div>
+										<div class="frame"></div>
+										<div class="frame"></div>
+										<div class="frame"></div>
+									</div>
+									<button class="block" ng-click="startAnimation()" title="Start animation">
+										<div class="play-icon"></div>
+									</button>
+								</div>
+							</div>
+						</div>
+			</div>
+			<h5 class="gray-sub-header">Ease out</h5>
+			<p>Ease out在开始时加速很快，逐渐减速，Ease out动画可以让物体有一种逐渐抵抗自然力，比如说风力和重力，最后区域静止的效果。</p>
+			<div class="row" ng-controller="easingExampleController">
+				<div class="small-10 small-offset-1 easing-example easing-type-slow-out">
+					<div class="animation-container">
+						<div class="animation-zone">
+							<div class="frame-trails">
+								<div class="frame"></div>
+								<div class="frame"></div>
+								<div class="frame"></div>
+								<div class="frame"></div>
+								<div class="frame"></div>
+								<div class="frame"></div>
+								<div class="frame"></div>
+								<div class="frame"></div>
+								<div class="frame"></div>
+								<div class="frame"></div>
+								<div class="frame"></div>
+								<div class="frame"></div>
+							</div>
+							<button class="block" ng-click="startAnimation()" title="Start animation">
+								<div class="play-icon"></div>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<h5 class="gray-sub-header">Easy ease</h5>
+			<p>Ease ease动画先加速再减速。能让元素的运动自然，富有真实感，而不是突然的开始运动和停止。</p>
+			<div
+				class="row" ng-controller="easingExampleController">
+				<div class="small-10 small-offset-1 easing-example easing-type-easy-ease">
+					<div class="animation-container">
+						<div class="animation-zone">
+							<div class="frame-trails">
+								<div class="frame"></div>
+								<div class="frame"></div>
+								<div class="frame"></div>
+								<div class="frame"></div>
+								<div class="frame"></div>
+								<div class="frame"></div>
+								<div class="frame"></div>
+								<div class="frame"></div>
+								<div class="frame"></div>
+								<div class="frame"></div>
+								<div class="frame"></div>
+								<div class="frame"></div>
+							</div>
+							<button class="block" ng-click="startAnimation()" title="Start animation">
+								<div class="play-icon"></div>
+							</button>
+						</div>
+					</div>
+				</div>
+		</div>
+		<h5 class="gray-sub-header">Linear spacing</h5>
+		<p>Linear Spacing 运动开始到结束，运动感完全一致，速度完全相同，这类运动让物体的运动感觉一致，但是比较的冷硬、机械。</p>
+		<div class="row" ng-controller="easingExampleController">
+			<div class="small-10 small-offset-1 easing-example easing-type-linear-spacing">
+				<div class="animation-container">
+					<div class="animation-zone">
+						<div class="frame-trails">
+							<div class="frame"></div>
+							<div class="frame"></div>
+							<div class="frame"></div>
+							<div class="frame"></div>
+							<div class="frame"></div>
+							<div class="frame"></div>
+							<div class="frame"></div>
+							<div class="frame"></div>
+							<div class="frame"></div>
+							<div class="frame"></div>
+							<div class="frame"></div>
+							<div class="frame"></div>
+						</div>
+						<button class="block" ng-click="startAnimation()" title="Start animation">
+							<div class="play-icon"></div>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<h5 class="gray-sub-header">Variable spacing</h5>
+		<p>Variable Spacing 可以构建不一致感，元素以不一致的速度运动。不一致感有时候会让元素看起来富有生机，有时候却让元素感觉不协调。</p>
+		<div class="row" ng-controller="easingExampleController">
+			<div class="small-10 small-offset-1 easing-example easing-type-variable-spacing">
+				<div class="animation-container">
+					<div class="animation-zone">
+						<div class="frame-trails">
+							<div class="frame"></div>
+							<div class="frame"></div>
+							<div class="frame"></div>
+							<div class="frame"></div>
+							<div class="frame"></div>
+							<div class="frame"></div>
+							<div class="frame"></div>
+							<div class="frame"></div>
+							<div class="frame"></div>
+							<div class="frame"></div>
+							<div class="frame"></div>
+							<div class="frame"></div>
+						</div>
+						<button class="block" ng-click="startAnimation()" title="Start animation">
+							<div class="play-icon"></div>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		</section>
+		</div>
+		<div class="row">
+			<div class="large-8 large-offset-2 columns">
+				<hr>
+			</div>
+		</div>
+		<div class="row">
+			<section role="region" id="rationale" aria-labelledby="rationale-heading" class="large-8 large-offset-2 columns general-section">
+				<h2 id="rationale-heading" class="header"><span class="section-colored-heading-text">动画原则</span> 展示了动画如何提高用户体验。 </h2>
+				<div class="row split-column">
+					<div class="split-column columns medium-6 large-6">
+						<gif-player class="gif-player" start-img="../../images/framework/animation/ani-foundation-orientation@2x.png" start-img-alt="" animated-img="../../images/framework/animation/ani-foundation-orientation@2x.gif" animated-img-alt=""
+							play-label="Play orientation animation" stop-label="Stop orientation animation" alt="Animation of a circular pin dropping onto a surface and then fading">
+							<div class="row">
+								<div class="small-8 small-offset-2 medium-12 medium-offset-0 columns">
+									<button role="button" class="play-button stopped" title="Play orientation animation">
+										<div class="overlay"></div>
+										<div class="overlay-image"></div><img src="../../images/framework/animation/ani-foundation-orientation@2x.png" alt=""></button>
+								</div>
+							</div>
+						</gif-player>
+						<h4 class="colored-sub-header">指向性</h4>
+						<p>动画提供用户空间感和指向感。</p>
+					</div>
+					<div class="split-column columns medium-6 large-6">
+						<gif-player class="gif-player" start-img="../../images/framework/animation/ani-foundation-awareness@2x.png" start-img-alt="" animated-img="../../images/framework/animation/ani-foundation-awareness@2x.gif" animated-img-alt=""
+							play-label="Play awareness animation" stop-label="Stop awareness animation" alt="Animation of a perpetual motion Newton&#x27;s Cradle">
+							<div class="row">
+								<div class="small-8 small-offset-2 medium-12 medium-offset-0 columns">
+									<button role="button" class="play-button stopped" title="Play awareness animation">
+										<div class="overlay"></div>
+										<div class="overlay-image"></div><img src="../../images/framework/animation/ani-foundation-awareness@2x.png" alt=""></button>
+								</div>
+							</div>
+						</gif-player>
+						<h4 class="colored-sub-header">知觉性</h4>
+						<p>动画会给予用户预示，让用户知晓接下来会发生什么。</p>
+					</div>
+				</div>
+				<div class="row split-column">
+					<div class="split-column columns medium-6 large-6">
+						<gif-player class="gif-player" start-img="../../images/framework/animation/ani-foundation-navigation@2x.png" start-img-alt="" animated-img="../../images/framework/animation/ani-foundation-navigation@2x.gif" animated-img-alt=""
+							play-label="Play navigation animation" stop-label="Stop navigation animation" alt="Animation of a magnetic compass swinging in between north-west and north-east">
+							<div class="row">
+								<div class="small-8 small-offset-2 medium-12 medium-offset-0 columns">
+									<button role="button" class="play-button stopped" title="Play navigation animation">
+										<div class="overlay"></div>
+										<div class="overlay-image"></div><img src="../../images/framework/animation/ani-foundation-navigation@2x.png" alt=""></button>
+								</div>
+							</div>
+						</gif-player>
+						<h4 class="colored-sub-header">导航性</h4>
+						<p>动画可以提供有效的指引，让用户知道要做什么。</p>
+					</div>
+					<div class="split-column columns medium-6 large-6">
+						<gif-player class="gif-player" start-img="../../images/framework/animation/ani-foundation-storytelling@2x.png" start-img-alt="" animated-img="../../images/framework/animation/ani-foundation-storytelling@2x.gif" animated-img-alt=""
+							play-label="Play story telling animation" stop-label="Stop story telling animation" alt="Animation of blocks shifting to the left">
+							<div class="row">
+								<div class="small-8 small-offset-2 medium-12 medium-offset-0 columns">
+									<button role="button" class="play-button stopped" title="Play story telling animation">
+										<div class="overlay"></div>
+										<div class="overlay-image"></div><img src="../../images/framework/animation/ani-foundation-storytelling@2x.png" alt=""></button>
+								</div>
+							</div>
+						</gif-player>
+						<h4 class="colored-sub-header">上下文</h4>
+						<p>动画按序列移动，可以给予用户提供丰富的上下文，告知用户目前在哪儿。</p>
+					</div>
+				</div>
+				<div class="row split-column">
+					<div class="split-column columns medium-6 large-6">
+						<gif-player class="gif-player" start-img="../../images/framework/animation/ani-foundation-focus@2x.png" start-img-alt="" animated-img="../../images/framework/animation/ani-foundation-focus@2x.gif" animated-img-alt="" play-label="Play focus animation"
+							stop-label="Stop focus animation" alt="Animation of circles getting bigger and then smaller, indicating points pressed">
+							<div class="row">
+								<div class="small-8 small-offset-2 medium-12 medium-offset-0 columns">
+									<button role="button" class="play-button stopped" title="Play focus animation">
+										<div class="overlay"></div>
+										<div class="overlay-image"></div><img src="../../images/framework/animation/ani-foundation-focus@2x.png" alt=""></button>
+								</div>
+							</div>
+						</gif-player>
+						<h4 class="colored-sub-header">焦点性</h4>
+						<p>动画可以告知用户目前最重要、最优先的元素，可以有效的抓住用户的焦点，减少次要元素所导致的分心。</p>
+					</div>
+					<div class="split-column columns medium-6 large-6">
+						<gif-player class="gif-player" start-img="../../images/framework/animation/ani-foundation-meaning@2x.png" start-img-alt="" animated-img="../../images/framework/animation/ani-foundation-meaning@2x.gif" animated-img-alt="" play-label="Play meaning animation"
+							stop-label="Stop meaning animation" alt="Animation of a two dimensional block becoming a three dimensional block and back again">
+							<div class="row">
+								<div class="small-8 small-offset-2 medium-12 medium-offset-0 columns">
+									<button role="button" class="play-button stopped" title="Play meaning animation">
+										<div class="overlay"></div>
+										<div class="overlay-image"></div><img src="../../images/framework/animation/ani-foundation-meaning@2x.png" alt=""></button>
+								</div>
+							</div>
+						</gif-player>
+						<h4 class="colored-sub-header">富有意义</h4>
+						<p>动画可以协助用户，告知用户信息的层次关系，以及内容的重要度。/p>
+					</div>
+				</div>
+				<div class="row split-column">
+					<div class="split-column columns medium-6 large-6">
+						<gif-player class="gif-player" start-img="../../images/framework/animation/ani-foundation-personality@2x.png" start-img-alt="" animated-img="../../images/framework/animation/ani-foundation-personality@2x.gif" animated-img-alt=""
+							play-label="Play personality animation" stop-label="Stop personality animation" alt="Animation of shapes smoothly shifting in to other shapes">
+							<div class="row">
+								<div class="small-8 small-offset-2 medium-12 medium-offset-0 columns">
+									<button role="button" class="play-button stopped" title="Play personality animation">
+										<div class="overlay"></div>
+										<div class="overlay-image"></div><img src="../../images/framework/animation/ani-foundation-personality@2x.png" alt=""></button>
+								</div>
+							</div>
+						</gif-player>
+						<h4 class="colored-sub-header">个性化</h4>
+						<p>动画可以为界面带来真实的质感，可以让动画变得有性格，可以构建用户与界面的情感练习。</p>
+					</div>
+					<div class="split-column columns medium-6 large-6">
+						<gif-player class="gif-player" start-img="../../images/framework/animation/ani-foundation-correlation@2x.png" start-img-alt="" animated-img="../../images/framework/animation/ani-foundation-correlation@2x.gif" animated-img-alt=""
+							play-label="Play correlation animation" stop-label="Stop correlation animation" alt="Animation of two shapes, with a circle on the left and on the right the shapes are shifting until an identical circle comes up, and then both circles turn green">
+							<div class="row">
+								<div class="small-8 small-offset-2 medium-12 medium-offset-0 columns">
+									<button role="button" class="play-button stopped" title="Play correlation animation">
+										<div class="overlay"></div>
+										<div class="overlay-image"></div><img src="../../images/framework/animation/ani-foundation-correlation@2x.png" alt=""></button>
+								</div>
+							</div>
+						</gif-player>
+						<h4 class="colored-sub-header">关联性</h4>
+						<p>动画展示了元素之间信息关系，帮助用户构建相关内容之间的心理模型。</p>
+					</div>
+				</div>
+			</section>
+		</div>
+		<div class="scroll-to-top" id="scroll-to-top" aria-label="Back to top of page" ng-class="{ visible: isPastFrameworkHero, &quot;position-absolute&quot;: !isScrollToTopElementFixed,  &quot;position-above-next-bar&quot;: isNextBarPresent }" ng-click="scrollToTop()"
+			tabindex="0">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="-277 286 20 26.7" enable-background="new -277 286 20 26.7" focusable="false">
+				<title>Back to top of page</title>
+				<g class="up-arrow">
+					<path d="M-277 286h20v4h-20zM-267 294.6h-.1l-8.6 8.7 1.4 1.4 1.4 1.4 3.9-3.9v10.5h4v-10.4l3.8 3.9 2.9-2.9-8.7-8.7z" />
+				</g>
+			</svg>
+		</div>
+		<div class="next-framework-section" id="next-framework-section">
+			<div class="row">
+				<div class="columns small-1 large-2"></div>
+				<div class="columns small-11 large-10"><a href="process.html">下一页：设计流程</a></div>
+			</div>
+		</div>
+		</div>
+		<!--[if lt IE 9]></div><![endif]-->
+		</div>
+		<footer class="dp-footer" role="contentinfo">
+		</footer>
+		<script defer type="text/javascript" src="../../vendor-cacheBust=YYP+VGUuOh|pCGaMAbAxA==.js"></script>
+		<script defer type="text/javascript" src="../../app-cacheBust=VQrxFGp5WhJQS1DDFuwGxw==.js"></script>

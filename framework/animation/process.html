@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="designsite" ng-controller="mobileNavigationController">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="x-ua-compatible" content="IE=edge">
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+		var hm = document.createElement("script");
+		hm.src = "//hm.baidu.com/hm.js?eff2d0807d58b3afb909b86ee1af0214";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+	<!--!
+
+        __######__                    ##   ##                :##:          :##:
+      ##############                 #  # #  #              #    #        #    #
+   #####:::IBM::::#####               ##   ##               #    #        #    #
+  ##                  ##                                     :##:          :##:
+        ##########                 #  #######  #
+     ####:DESIGN:####         #   #             #   #       :#####:      :#####:
+   ####:::::/\:::::####     #    #  ###########  #    #     ##### :##  ##: #####
+  #####::::    ::::#####    #   #                 #   #     #####   :##:   #####
+   ####:::::\/:::::####      ##     ###########    ##       :####          ####:
+     ####LANGUAGE####                                        ####          ####
+        ##########                   #########               ####          ####
+
+                                    JOIN OUR TEAM
+                       http://www.ibm.com/design/careers.shtml
+
+  ############
+  ###############                                  ###
+  ###         #####                                ###
+  ###           ####
+  ###            ####    ########      ########    ###    ######  ##  ##  #####
+  ###             ###   ##########    ##########   ###   ###########  ###########
+  ###             ###  ###      ###  ###           ###  ###      ###  ###      ###
+  ###            ####  ############  ############  ###  ###      ###  ###      ###
+  ###           ####   ############  ############  ###  ###      ###  ###      ###
+  ###         #####    ###                    ###  ###  ###      ###  ###      ###
+  ###############       ##########    ##########   ###   ###########  ###      ###
+  ############           ########      ########    ###    ##########  ###      ###
+                                                                 ###
+                                                         ###########
+                                                          #########
+
+-->
+	<meta name="viewport" content="initial-scale=1,minimal-ui">
+	<link rel="schema.DC" href="http://purl.org/DC/elements/1.0/">
+	<link rel="SHORTCUT ICON" href="../../../../favicon.ico">
+	<meta name="DC.Rights" content="© Copyright IBM Corp. 2014">
+	<meta name="DC.Date" scheme="iso8601" content="2014-11-14">
+	<meta name="Source" content="IBM Design technical, delivery:IBM authoring:IBM">
+	<meta name="Security" content="Public">
+	<meta name="IBM.Effective" scheme="W3CDTF" content="2014-11-14">
+	<meta name="DC.Subject" scheme="IBM_SubjectTaxonomy" content="ZZ999">
+	<meta name="Owner" content="Phil Gilbert/Austin/IBM">
+	<meta name="DC.Language" scheme="rfc1766" content="en">
+	<meta name="IBM.Country" content="ZZ">
+	<meta name="DC.Type" scheme="IBM_ContentClassTaxonomy" content="CTZZZ">
+	<meta name="og:site_name" property="og:site_name" content="IBM Design Language">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:creator" content="@ibmdesign">
+	<meta name="twitter:site" content="@ibmdesign">
+	<meta name="Robots" content="index,follow">
+	<meta name="Keywords" content="ibm,ibm design,ibm design language,design language,design,experience,visual,interaction,front end,layout,typography,iconography,color,information architecture,touch,motion,resources,inspiration, IBM animation, user engagement, design interaction, animation building blocks, UI animation, user interface animation, product animation, machine motion style, animation best practices, animation workflow, animation tutorial, translate animation video to code, animation examples, IBM animation style, IBM animation code, software animation, product animation">
+	<meta name="Description" content="Plan ahead with great collaboration as the secret ingredient to any successful animation.">
+	<meta name="Abstract" content="Plan ahead with great collaboration as the secret ingredient to any successful animation.">
+	<meta name="og:description" property="og:description" content="Plan ahead with great collaboration as the secret ingredient to any successful animation.">
+	<meta name="twitter:description" content="Plan ahead with great collaboration as the secret ingredient to any successful animation.">
+	<title>IBM Design Language | Animation: Process</title>
+	<meta name="og:title" property="og:title" content="IBM Design Language | Animation: Process">
+	<meta name="twitter:title" content="IBM Design Language | Animation: Process">
+	<meta name="og:url" property="og:url" content="http://www.ibm.com/design/language/framework/animation/process">
+	<meta name="og:type" property="og:type" content="website">
+	<meta name="og:image" property="og:image" content="http://www.ibm.com/design/language/images/social/og_animation.png">
+	<meta name="twitter:image" content="http://www.ibm.com/design/language/images/social/og_animation.png">
+	<link rel="stylesheet" href="../../app-cacheBust=0wGFcFAgAaT5AwNEA1LvcQ==.css">
+
+	<body class="page-color-teal" ng-class="{&quot;no-scroll&quot;: mobileNavVisibility}" mobile-nav-closer>
+		<header role="banner" aria-label="Site header" scroll-fix>
+			<div class="fixed contain-to-grid">
+				<nav class="top-bar" role="navigation" aria-label="Site">
+					<div class="title-area">
+						<div class="navbar-brand">
+							<button id="hamburger-icon" class="hamburger-icon" ng-class="{&quot;mobile-nav-visible&quot; : mobileNavVisibility}" aria-label="Navigation menu" title="Navigation menu" ng-click="toggleMobileNavVisibility()"></button>
+							<div class="mobile-nav" ng-class="{visible : mobileNavVisibility, hidden : !mobileNavVisibility}">
+								<div id="mobile-nav-container" class="mobile-nav-container">
+									<ul class="nav-list nav-level-0" role="tablist">
+
+										<li class="nav-item nav-level-0 accordion-navigation">
+											<div id="mobile-framework-panel" class="nav-content nav-level-0 content"
+												role="tabpanel" aria-labelledby="mobile-framework-heading">
+												<ul class="nav-list nav-level-1 accordion" data-accordion role="tablist" ng-cloak>
+
+								<li class="nav-item nav-level-1 accordion-navigation active"><a href="fundamentals.html#mobile-framework-animation-panel" class="nav-anchor nav-level-1" role="tab" id="mobile-framework-animation-heading" aria-controls="mobile-framework-animation-panel" tabindex="0"><span class="nav-title">动画</span></a>
+									<div
+										id="mobile-framework-animation-panel" class="nav-content nav-level-1 content active" role="tabpanel" aria-labelledby="mobile-framework-animation-heading">
+										<ul class="nav-list nav-level-2 accordion" data-accordion role="tablist">
+											<li class="nav-item nav-level-2 active"><span><a class="nav-anchor nav-level-2" role="tab" href="introduction.html" tabindex="0"><span class="nav-title">简介</span></a>
+												</span>
+											</li>
+											<li class="nav-item nav-level-2"><span><a class="nav-anchor nav-level-2" role="tab" href="fundamentals.html" tabindex="0"><span class="nav-title">设计基础</span></a>
+												</span>
+											</li>
+											<li class="nav-item nav-level-2"><span><a class="nav-anchor nav-level-2" role="tab" href="process.html" tabindex="0"><span class="nav-title">设计流程</span></a>
+												</span>
+											</li>
+										</ul>
+							</div>
+							</li>
+
+						</ul>
+					</div>
+					</li>
+					</ul>
+			</div>
+			</div>
+			<div class="navbar-brand-heading"><a href="http://www.ibm.com/design/" target="_blank" title="IBM Design">IBM <b>Design</b></a> <a href="http://www.ibm.com/design/language/" target="_blank" title="Language" id="navbar-brand-language"><b>Language</b></a></div>
+			</nav>
+			</div>
+		</header>
+		<div class="main" role="main">
+			<!--[if lte IE 9]><div class="old-ie-warning">
+          This site is not optimized for Internet Explorer 9 and older. Please upgrade if you can, or use a different modern browser.
+        </div><![endif]-->
+			<!--[if lt IE 9]><div style="display:none"><![endif]-->
+			<div class="content-wrapper" ng-controller="frameworkController">
+				<div class="dp-framework-hero" id="framework-hero">
+					<div class="framework-header-hero">
+						<div class="framework-header-hero-nav hero-height" role="navigation" aria-label="Framework"><a href="process.html#" class="hero-nav-placeholder" hero-nav-tab-placeholder ng-show="isPastFrameworkHero">Framework navigation</a> <a href="process.html#" class="hero-nav-placeholder" hero-nav-backtab-placeholder ng-show="isPastFrameworkHero">Framework navigation</a>
+							<ul
+								class="hero-nav nav-list nav-level-0 show-for-large-up accordion" data-accordion ng-class="{ dangly: isPastFrameworkHero }" role="tablist">
+								<li class="nav-item nav-level-0 accordion-navigation active dangly-activator" ng-class="{active: !isPastFrameworkHero}"><a href="process.html#dangly-panel" class="nav-anchor nav-level-0" role="tab" id="dangly-heading" aria-controls="dangly-panel" tabindex="-1" title="Navigation menu" aria-label="Navigation menu"><span class="hamburger-icon"></span></a>
+									<div id="dangly-panel"
+										class="nav-content nav-level-0 content active dangly-activator" role="tabpanel" aria-labelledby="dangly-heading" ng-class="{active: !isPastFrameworkHero}">
+										<ul class="nav-list nav-level-1 accordion" data-accordion role="tablist">
+											<li class="nav-item nav-level-1 accordion-navigation active"><a href="process.html#dangly-animation-panel" class="nav-anchor nav-level-1" role="tab" id="dangly-animation-heading" aria-controls="dangly-animation-panel" tabindex="0"><span class="nav-title">动画</span></a>
+												<div id="dangly-animation-panel"
+													class="nav-content nav-level-1 content active" role="tabpanel" aria-labelledby="dangly-animation-heading">
+													<ul class="nav-list nav-level-2 accordion" data-accordion role="tablist">
+														<li class="nav-item nav-level-2"><span><a class="nav-anchor nav-level-2" role="tab" href="introduction.html" tabindex="0"><span class="nav-title">简介</span></a>
+															</span>
+														</li>
+														<li class="nav-item nav-level-2"><span><a class="nav-anchor nav-level-2" role="tab" href="fundamentals.html" tabindex="0"><span class="nav-title">设计基础</span></a>
+															</span>
+														</li>
+														<li class="nav-item nav-level-2 active"><span><a class="nav-anchor nav-level-2" role="tab" href="process.html" tabindex="0"><span class="nav-title">设计流程</span></a>
+															</span>
+														</li>
+													</ul>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</li>
+								</ul>
+						</div>
+						<div class="framework-header-main">
+							<section role="region" class="framework-image" aria-labelledby="dp-hero-heading">
+								<div class="framework-header-main-column">
+									<h1 id="dp-hero-heading">设计流程</h1>
+									<p>将实践心得、工具使用、实现技巧嵌入到你自己的工作流程中</p>
+									<ul class="small-block-grid-2 medium-block-grid-3 hero-links">
+										<li><a href="process.html#practices" du-smooth-scroll duration="1000" offset="75">实践</a></li>
+										<li><a href="process.html#tools" du-smooth-scroll duration="1000" offset="75">工具</a></li>
+										<li><a href="process.html#translate" du-smooth-scroll duration="1000" offset="75">转化</a></li>
+										<li><a href="process.html#read" du-smooth-scroll duration="1000" offset="75">相关阅读</a></li>
+									</ul>
+								</div>
+							</section>
+							<div class="framework-header-hero-flourish">
+								<div class="color-bar-flourish"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<section role="region" id="iterate-and-implement" aria-labelledby="iterate-and-implement-heading" class="color-bar-section framework-color-grey">
+					<div class="row large-up-vertical-align-columns">
+						<div class="large-push-5 small-offset-2 small-8 medium-offset-3 medium-6 large-3 large-offset-2 columns"><img src="../../images/framework/animation/ani-process-iterate.gif" alt=""></div>
+						<div class="large-pull-3 medium-10 medium-offset-1 large-offset-0 large-5 end columns">
+							<h2 id="iterate-and-implement-heading">迭代与实现</h2>
+							<p>与整个团队协同工作，让动画从早期的草稿原型逐步转化，最后呈递用户以愉悦的使用体验。</p>
+						</div>
+					</div>
+				</section>
+				<div class="row">
+					<section role="region" id="practices" aria-labelledby="practices-heading" class="large-8 large-offset-2 columns general-section">
+						<h2 id="practices-heading" class="header"><span class="section-colored-heading-text">实践</span> 找出动画设计的常规实现方式。</h2></section>
+				</div>
+				<div class="expanding-section row">
+					<div class="large-8 large-offset-2 columns">
+						<ul class="accordion" data-accordion data-options="multi_expand:true" role="tablist">
+							<li class="accordion-navigation"><a href="process.html#define-panel" role="tab" id="define-heading" aria-controls="define-panel"><span class="panel-number">1</span><h3 class="accordion-anchor-heading">定义</h3><div class="accordion-anchor"></div></a>
+								<div id="define-panel" class="content"
+									role="tabpanel" aria-labelledby="define-heading"><strong class="expand-top-header">标明出动画设计量</strong>
+									<div class="row split-column">
+										<div class="split-column columns medium-6 large-4">
+											<figure class="image-figure text-center"><img src="../../images/framework/animation/ani-process-define.svg" alt="A page with sections highlighted in teal"></figure>
+										</div>
+										<div class="split-column columns medium-6 large-8">
+											<p>不管是线框图设计、高保真原型设计或者编码，在此之前，花一些时间去定义界面中一些需要添加动画的关键性交互，这样可以有效的提高使用体验。在一份文档中集中标注，写清楚哪些交互需要动画效果，这样有助于整个团队理解，也能让大家知道哪个动画是最重要的，应该最先去设计。</p>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="accordion-navigation"><a href="process.html#design-panel" role="tab" id="design-heading" aria-controls="design-panel"><span class="panel-number">2</span><h3 class="accordion-anchor-heading">设计</h3><div class="accordion-anchor"></div></a>
+								<div id="design-panel" class="content"
+									role="tabpanel" aria-labelledby="design-heading"><strong class="expand-top-header">选择工具，开始简单的设计尝试</strong>
+									<div class="row split-column">
+										<div class="split-column columns medium-6 large-4">
+											<figure class="image-figure text-center"><img src="../../images/framework/animation/ani-process-design.svg" alt="A page with an arrow pointing left, implying some of the sections in green are moving left"></figure>
+										</div>
+										<div class="split-column columns medium-6 large-8">
+											<p>一旦搞清楚哪些交互需要添加动效后，选择你熟悉的工具，开始思考如何让元素进行运动。使用基本属性，例如位置和缩放，结合时间关键帧还有时间顺序关系。有些人可能在最开始的时候习惯使用纸笔来描述方法，而还有些人可能会喜欢在代码中使用简单的形状动画探索。</p>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="accordion-navigation"><a href="process.html#prototype-panel" role="tab" id="prototype-heading" aria-controls="prototype-panel"><span class="panel-number">3</span><h3 class="accordion-anchor-heading">原型</h3><div class="accordion-anchor"></div></a>
+								<div id="prototype-panel"
+									class="content" role="tabpanel" aria-labelledby="prototype-heading"><strong class="expand-top-header">调用视觉样式，差异化迭代探索概念</strong>
+									<div class="row split-column">
+										<div class="split-column columns medium-6 large-4">
+											<figure class="image-figure text-center"><img src="../../images/framework/animation/ani-process-prototype.svg" alt="A page with a section displaced from the other sections, and a sample movement path in a right column"></figure>
+										</div>
+										<div class="split-column columns medium-6 large-8">
+											<p>现在你对要设计怎样的动画效果已经有所理解，那么这时候需要使用不同的工具来进行差异化迭代——尝试使用不同的速度、缓动曲线以及图层运动次序。例如，在动画的中间画中尝试研磨细节，细细品味不同感受，以便探索出不同的设计概念。</p>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="accordion-navigation"><a href="process.html#test-panel" role="tab" id="test-heading" aria-controls="test-panel"><span class="panel-number">4</span><h3 class="accordion-anchor-heading">测试</h3><div class="accordion-anchor"></div></a>
+								<div id="test-panel" class="content"
+									role="tabpanel" aria-labelledby="test-heading"><strong class="expand-top-header">将原型放到用户手中</strong>
+									<div class="row split-column">
+										<div class="split-column columns medium-6 large-4">
+											<figure class="image-figure text-center"><img src="../../images/framework/animation/ani-process-test.svg" alt="A mobile device with two sections pointed out, one with a check mark and one with an ex"></figure>
+										</div>
+										<div class="split-column columns medium-6 large-8">
+											<p>获取用户的使用反馈，一点是整体的使用体验，另外一点是关于动画的缓动曲线。注意动画一定要测试一下，是否符合可用性规范，这样你的动画才能用的舒心，操作起来有效。</p>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="accordion-navigation"><a href="process.html#refine-panel" role="tab" id="refine-heading" aria-controls="refine-panel"><span class="panel-number">5</span><h3 class="accordion-anchor-heading">提炼</h3><div class="accordion-anchor"></div></a>
+								<div id="refine-panel" class="content"
+									role="tabpanel" aria-labelledby="refine-heading"><strong class="expand-top-header">根据反馈，调整设计</strong>
+									<div class="row split-column">
+										<div class="split-column columns medium-6 large-4">
+											<figure class="image-figure text-center"><img src="../../images/framework/animation/ani-process-refine.svg" alt="A page with writing on the left and a picture of a mobile device on the right"></figure>
+										</div>
+										<div class="split-column columns medium-6 large-8">
+											<p>分析用户测试中的用户反馈，仔细微调设计细节。如果不打算推倒重来，只是小修小补的话，那么和工程师一起在代码里面修改会比在设计软件和原型中修改要容易一些。</p>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="accordion-navigation"><a href="process.html#implement-panel" role="tab" id="implement-heading" aria-controls="implement-panel"><span class="panel-number">6</span><h3 class="accordion-anchor-heading">实现</h3><div class="accordion-anchor"></div></a>
+								<div id="implement-panel"
+									class="content" role="tabpanel" aria-labelledby="implement-heading"><strong class="expand-top-header">通过代码将动画实现</strong>
+									<div class="row split-column">
+										<div class="split-column columns medium-6 large-4">
+											<figure class="image-figure text-center"><img src="../../images/framework/animation/ani-process-implement.svg" alt="A hand holding a phone and sliding one section with the thumb"></figure>
+										</div>
+										<div class="split-column columns medium-6 large-8">
+											<p>和开发者和工程师保持良好的关系，让他们从设计的开始就参与进来。实现伟大的动效设计需要设计者和开发者大量的沟通，才能将设计意图转化为屏幕中真实的运动，而你的设计很可能会依据实现的可行性而进行修改。</p>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="row">
+					<div class="large-8 large-offset-2 columns">
+						<hr>
+					</div>
+				</div>
+				<div class="row">
+					<section role="region" id="tools" aria-labelledby="tools-heading" class="large-8 large-offset-2 columns general-section">
+						<h2 id="tools-heading" class="header"><span class="section-colored-heading-text">工具</span> 可以在不同流程中帮助你进行设计</h2>
+						<h4 class="colored-sub-header">初期创意</h4>
+						<div class="row collapse">
+							<div class="columns small-offset-1 small-10 medium-offset-2 medium-8">
+								<figure class="image-figure text-center"><img src="../../images/framework/animation/ani-process-lowfi.svg" alt="Three screens, the top of which has three sample mobile screens with green sections highlighted"></figure>
+							</div>
+						</div>
+						<div class="row split-column">
+							<div class="split-column columns medium-6 large-6">
+								<h5 class="gray-sub-header">草图设计</h5>
+								<p>如果你有了草图设计，画一些故事板或概念，那么原型和动画可以很快的设计出来。用草图来画出动画的过渡元素，可以有效的展示界面是如何过渡转场的。</p>
+							</div>
+							<div class="split-column columns medium-6 large-6">
+								<h5 class="gray-sub-header">ADOBE PHOTOSHOP<sup>&reg;</sup></h5>
+								<p>Photoshop可以创建低保真动画gif，通过这些序列帧大家可以讨论设计。PS是非常棒的工具，因为之前我们设计静态就是在PS中完成的。</p>
+							</div>
+						</div>
+						<h4 class="colored-sub-header">原型设计</h4>
+						<div class="row collapse">
+							<div class="columns small-offset-1 small-10 medium-offset-1 medium-10">
+								<figure class="image-figure text-center"><img src="../../images/framework/animation/ani-process-midfi.svg" alt="A screen with a sample mobile devide screen on the left and editing options on the right"></figure>
+							</div>
+						</div>
+						<div class="row split-column">
+							<div class="split-column columns medium-6 large-6">
+								<h5 class="gray-sub-header">Keynote<sup>&reg;</sup></h5>
+								<p>在 Keynote 中，你可以构建中等保真级别的动画，通过使用 “magice move” 和其他内置动画效果。可以用来在设计的早期制作原型，定义运动感和图层运动顺序。</p>
+							</div>
+							<div class="split-column columns medium-6 large-6">
+								<h5 class="gray-sub-header">Adobe<sup>&reg;</sup> After Effects</h5>
+								<p>通过使用AE，你可以构建高保真动画，但是没有交互。用来展示高保真设计概念很不错，但是所构建的动画很有可能在实现流程中发现可行性问题。</p>
+							</div>
+						</div>
+						<div class="row split-column">
+							<div class="split-column columns medium-6 large-6">
+								<h5 class="gray-sub-header">Axure<sup>&reg;</sup> RP</h5>
+								<p>使用Axure RP的内置动画效果，你可以构建中等保真级别的动画，跟Keynote非常像素，可以调节时间等动画参数。</p>
+							</div>
+							<div class="split-column columns medium-6 large-6">
+								<h5 class="gray-sub-header">Framer</h5>
+								<p>Framer 是一款针对桌面端和移动端的交互工具，但是需要一定的开发知识。Framer 的代码在实际实现中并不可用，但是 Framer 很擅长制作一些微交互。</p>
+							</div>
+						</div>
+						<div class="row split-column">
+							<div class="split-column columns medium-6 large-6">
+								<h5 class="gray-sub-header">Adobe<sup>&reg;</sup> Edge Animate</h5>
+								<p>使用 Edge Animate，你可以构建高保真动画，还能够加入基础的交互。Edge 支持导出 HTML 和 Javascript ，但是实际很难使用这些代码，而且 PS 和 AI 的静态素材也很难导入。</p>
+							</div>
+							<div class="split-column columns medium-6 large-6">
+								<h5 class="gray-sub-header">Origami<sup>&reg;</sup></h5>
+								<p>Origami 是基于 QC 构建的动画框架，和 Framer 非常相似，它的动画功能非常强劲，非常适合用来设计微交互。Origami 是移动端原型设计的利器。</p>
+							</div>
+						</div>
+						<h4 class="colored-sub-header">实现</h4>
+						<div class="row collapse">
+							<div class="columns small-offset-1 small-10 medium-offset-1 medium-10">
+								<figure class="image-figure text-center"><img src="../../images/framework/animation/ani-process-hifi.svg" alt="Two screens, the left has text and the right has an image of a mobile device"></figure>
+							</div>
+						</div>
+						<div class="row split-column">
+							<div class="split-column columns medium-6 large-6">
+								<h5 class="gray-sub-header">CSS</h5>
+								<p>CSS 可以构建高保真动画，所构建出的效果可以直接使用。CSS 既可以用来做原型，也可以直接实现。</p>
+							</div>
+							<div class="split-column columns medium-6 large-6">
+								<h5 class="gray-sub-header">Swift</h5>
+								<p>Swift 是 iOS 和 OS X的编程语言。Swift可以直接实现动画。</p>
+							</div>
+						</div>
+						<div class="row split-column">
+							<div class="split-column columns medium-6 large-6">
+								<h5 class="gray-sub-header">Javascript</h5>
+								<p>Javascript 可以创建高保真动画，代码也可以服用。Javascript 有很多的库和框架，让设计者可以更方便的处理界面元素，例如 Snap.svg 和 GSAP。</p>
+							</div>
+							<div class="split-column columns medium-6 large-6">
+								<h5 class="gray-sub-header">QuartzCode</h5>
+								<p>QuartzCode 是一款动画工具，你可以随意的迭代动画。自动实时生成方便 iOS 和 OS X 使用的 Swift 和 Objective－C 代码。</p>
+							</div>
+						</div>
+					</section>
+				</div>
+				<div class="row">
+					<div class="large-8 large-offset-2 columns">
+						<hr class="hr-smaller-top">
+					</div>
+				</div>
+				<div class="row">
+					<section role="region" id="translate" aria-labelledby="translate-heading" class="large-8 large-offset-2 columns general-section">
+						<h2 id="translate-heading" class="header"><span class="section-colored-heading-text">转化</span> 视频原型为真实效果</h2>
+						<p>当考虑到动画实现的时候，设计师和开发者必须对动画的设计理念保持高度的一致，无论是对原型的理解，还是实现的一些知识。将概念转化为代码往往需要灵活的思考方式，因为代码往往有多种多样的方式实现动画。</p>
+						<p>下面提供了一些简单的步骤，以便开发和设计合作。一般来说，需要确定元素的属性，动画持续时间，关键帧，动画曲线，以及延迟。</p>
+						<h4 class="colored-sub-header">动画属性</h4>
+						<p>属性代表着物体随时间变化的变化特点。这个地方可以参考IBM动画设计规范基础部分中的 <a href="fundamentals.html#basics" class="inline-link">构建模块</a>。</p>
+						<gif-player class="gif-player" start-img="../../images/framework/animation/ani-process-translate@2x.png"
+							start-img-alt="Top navigation animation where an animated bar shifts from left to right" animated-img="../../images/framework/animation/ani-process-translate@2x.gif" animated-img-alt="Top navigation animation" play-label="Play top navigation animation"
+							stop-label="Stop top navigation animation" alt="">
+							<button role="button" class="play-button stopped" title="Play top navigation animation">
+								<div class="overlay"></div>
+								<div class="overlay-image"></div><img src="../../images/framework/animation/ani-process-translate@2x.png" alt="Top navigation animation where an animated bar shifts from left to right"></button>
+						</gif-player>
+						<p>我们来看一下顶部导航的这个动画案例中元素属性的改变。当悬停状态下，顶部导航栏对应选项下方的暗条增高，然后在两个链接之间水平滑动。点击状态下，按条增高。这个动画主要使用了元素的比例和位置属性。</p>
+						<p>一旦在文档中记录了属性后，下面就需要根据属性随时间的变化记录关键帧。关键帧的记录非常简单，只需要在时间的关键节点——也就是属性变化的节点上记录时间。</p>
+						<h4
+							class="colored-sub-header">定义关键帧</h4>
+							<p>关键帧代表着在某个特定时间状态下，记录参数的帧，可以用来表述不同的属性（例如位置、缩放、不透明度、旋转等），关键帧定义了单个动作的开始和结束状态的属性变化。</p>
+							<p>开发者一半会把关键帧写成百分比,这和我们在设计中根据时间轴伤的时间帧来设置关键帧的思维模式不同。<a href="http://dev.w3.org/csswg/css-animations/#keyframes" target="_blank" class="inline-link">将关键帧转化为百分比</a>	的好处是，整个动画可以按时间成比例缩放，从而调节快慢。</p>
+							<p>根据上面的顶部导航栏案例，下面提供了三个关键帧，展示了元素是如何随时间变化的。</p>
+							<ul class="spaced-content-block">
+								<li><strong>关键帧 1:</strong> 高度增加6px</li>
+								<li><strong>关键帧 2:</strong> 水平位移变换</li>
+								<li><strong>关键帧 3:</strong> 高度增加100%</li>
+							</ul>
+							<p>当从AE或其他工具中提取关键帧时，时间轴可以提供很直观的动画流程展示，也方便设计者标注动画。</p>
+							<p>基于状态的改变，动画很可能会相应的提供反馈。在CSS中可以定义开始和结束状态。例如上面的顶部导航栏案例，类的改变由Javascript处理。这也就意味着由 CSS 和 Javscript 定义的代码可以触发动画。</p><pre class="code-section">
+    <code class="language-css"><pre>nav ui li:hover {
+  height: 6px;
+  transform: translateX(0);
+}
+
+nav ul li:active {
+  height: 100%;
+}
+</pre></code>
+							</pre>
+							<p>使用CSS，关键帧可以通过不同的类来定义，CSS转场可以处理动画曲线，处理属性随时间变化的特性。</p>
+							<p>在 CSS 关键帧技术中，更复杂的动画不仅仅要处理“起点和终点”。而在设计中处理转场效果和动画时，所要添加的关键帧和编程语言的实现思路也是不同的。但是，不管是时间轴设计，还是编程，在“属性与时间”上的核心理念是一致的。</p>
+							<h4 class="colored-sub-header">持续时间</h4>
+							<p>当标注完关键帧后，需要开始标注动画的持续时间。持续时间表示了动画所持续的时间长度。在设定持续时间的时候，需要考虑可用性和交互性，依此来设定持续时间。动画的持续时间应该让用户感觉自然、反馈迅速。</p>
+							<p>持续时间的计算可以基于FPS，首先了解动画完成所需要的帧数。在AE文件中，你可以观察到帧速率（在合成设置中，Command＋K）。而在QuickTime视频中，帧速率可以在影片检查器（Command ＋ I）中找到。</p>
+							<div role="presentation" aria-label="
+  Frames / Frame rate
+  =
+  Seconds" class="division-equation align-center">
+								<div class="left-side">
+									<div class="numerator">帧数</div>
+									<div class="denominator">帧速率 </div>
+								</div>
+								<div class="equals">=</div>
+								<div class="right-side">秒</div>
+							</div>
+							<h4 class="colored-sub-header">动画曲线函数/贝塞尔动画插值曲线</h4>
+							<p>完成了上面几步的标注和设定之后，就已经完成了动画实现的基础部分，不过还需要使用动画曲线来增加动画的细腻感。动画曲线函数基于数学表达式来创建贝塞尔曲线，这条曲线可以用图标来展现，展示了属性变化的加速和减速。</p>
+							<div class="row">
+								<div class="medium-8 split-column columns">
+									<p>在网上有很多的资源可以帮助设计者快速构建动画曲线，例如 <a href="http://cubic-bezier.com" target="_blank" class="inline-link">cubic-bezier.com</a>.</p>
+									<p>如果需要从视频中学习动画曲线，那么可以看IBM动画设计规范的 <a href="fundamentals.html#timing" class="inline-link">Timing section</a> ，以便理解在什么样的动画中应该使用什么养的缓动曲线。这些视频会帮助你理解动画曲线，从而在实际产品中实验或实践。</p>
+								</div>
+								<div class="medium-4 split-column columns">
+									<div class="row collapse">
+										<div class="columns small-offset-1 small-10 medium-offset-0 medium-12">
+											<figure class="image-figure text-center"><img src="../../images/framework/animation/ani-process-bezier-8-0-2-1.svg" alt="A cubic bezier on a grid(.8,0,.2,1)">
+												<figcaption class="image-figure-caption">
+													<div class="h4-style-caption">Cubic Bezier</div>(.8,0,.2,1)</figcaption>
+											</figure>
+										</div>
+									</div>
+								</div>
+							</div>
+					</section>
+				</div>
+				<div class="row">
+					<div class="large-8 large-offset-2 columns">
+						<hr>
+					</div>
+				</div>
+				<div class="row">
+					<section role="region" id="read" aria-labelledby="read-heading" class="large-8 large-offset-2 columns general-section">
+						<h2 id="read-heading" class="header"><span class="section-colored-heading-text">相关阅读</span> ，动画设计和实现的有关知识</h2>
+						<p>下面提供了一些文档和文章，无论你的经验是否丰富，设计细节是否细腻。只要根据自己的需求深度挖掘，在这些文章中都可以找到很多有用的内容。</p>
+						<div class="row split-column">
+							<div class="split-column columns medium-6 large-6">
+								<ul class="no-decoration"></ul>
+								<h5 class="gray-sub-header">原型设计工具</h5>
+								<ul class="no-decoration">
+									<li><a href="http://webdesign.tutsplus.com/tutorials/how-to-use-after-effects-for-web-animation-prototypes%2d%2dcms-21451" target="_blank" class="inline-link">AfterEffects for Web Animation</a></li>
+									<li><a href="http://dzineblog.com/2014/09/25-after-effects-tutorials-for-ui-ux-design.html" target="_blank" class="inline-link">AfterEffects Tutorials for UX and UI Design</a></li>
+									<li><a href="http://webdesign.tutsplus.com/articles/introducing-adobe-edge%2d%2dwebdesign-3773" target="_blank" class="inline-link">Intro to Adobe Edge</a></li>
+									<li><a href="http://facebook.github.io/origami/tutorials/" target="_blank" class="inline-link">Intro to Origami</a></li>
+									<li><a href="http://www.axureworld.org/library/axure-animations-tips-tricks.html" target="_blank" class="inline-link">Axure Animation Tricks</a></li>
+									<li><a href="https://robots.thoughtbot.com/animating-with-keynote" target="_blank" class="inline-link">Animating with Keynote</a></li>
+									<li><a href="http://keynotopia.com/" target="_blank" class="inline-link">Keynote Resources</a></li>
+									<li><a href="https://framerjs.com/learn/basics/" target="_blank" class="inline-link">Framer JS Basics</a></li>
+									<li><a href="https://hackdesign.org/lessons/41" target="_blank" class="inline-link">Framer JS Advanced</a></li>
+									<li><a href="http://webdesign.tutsplus.com/tutorials/prototyping-an-interactive-ios-product-tour-with-framerjs%2d%2dcms-22268" target="_blank" class="inline-link">Prototyping Interactive Products With Framer JS</a></li>
+								</ul>
+								<h5 class="gray-sub-header">时间函数</h5>
+								<ul class="no-decoration">
+									<li><a href="http://matthewlein.com/ceaser/" target="_blank" class="inline-link">Ceaser Tool</a></li>
+									<li><a href="http://cubic-bezier.com/#.17,.67,.83,.67" target="_blank" class="inline-link">Cubic Bezier Tool</a></li>
+									<li><a href="http://easings.net/" target="_blank" class="inline-link">Easings</a></li>
+								</ul>
+							</div>
+							<div class="split-column columns medium-6 large-6">
+								<ul class="no-decoration"></ul>
+								<h5 class="gray-sub-header">CSS 动画</h5>
+								<ul class="no-decoration">
+									<li><a href="https://robots.thoughtbot.com/css-animation-for-beginners" target="_blank" class="inline-link">CSS Animations for Beginners</a></li>
+									<li><a href="http://css3.bradshawenterprises.com/transitions/" target="_blank" class="inline-link">CSS Transitions</a></li>
+									<li><a href="https://medium.com/@ryan_brownhill/after-effects-to-css-79225c1d767e" target="_blank" class="inline-link">AfterEffects to CSS</a></li>
+								</ul>
+								<h5 class="gray-sub-header">SVG 动画</h5>
+								<ul class="no-decoration">
+									<li><a href="https://css-tricks.com/guide-svg-animations-smil/" target="_blank" class="inline-link">SVG SMIL Animations</a></li>
+									<li><a href="http://snapsvg.io/" target="_blank" class="inline-link">SNAP.svg</a></li>
+								</ul>
+								<h5 class="gray-sub-header">Javascript 动画</h5>
+								<ul class="no-decoration">
+									<li><a href="http://greensock.com/gsap" target="_blank" class="inline-link">GSAP SVG</a></li>
+								</ul>
+							</div>
+						</div>
+					</section>
+				</div>
+				<div class="scroll-to-top" id="scroll-to-top" aria-label="Back to top of page" ng-class="{ visible: isPastFrameworkHero, &quot;position-absolute&quot;: !isScrollToTopElementFixed,  &quot;position-above-next-bar&quot;: isNextBarPresent }" ng-click="scrollToTop()"
+					tabindex="0">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="-277 286 20 26.7" enable-background="new -277 286 20 26.7" focusable="false">
+						<title>Back to top of page</title>
+						<g class="up-arrow">
+							<path d="M-277 286h20v4h-20zM-267 294.6h-.1l-8.6 8.7 1.4 1.4 1.4 1.4 3.9-3.9v10.5h4v-10.4l3.8 3.9 2.9-2.9-8.7-8.7z" />
+						</g>
+					</svg>
+				</div>
+				<div class="next-framework-section" id="next-framework-section">
+					<div class="row">
+						<div class="columns small-1 large-2"></div>
+						<div class="columns small-11 large-10"><a href="introduction.html">重新阅读: 简介</a></div>
+					</div>
+				</div>
+			</div>
+			<!--[if lt IE 9]></div><![endif]-->
+		</div>
+		<footer class="dp-footer" role="contentinfo">
+
+		</footer>
+		<script defer type="text/javascript" src="../../vendor-cacheBust=YYP+VGUuOh%7CpCGaMAbAxA==.js"></script>
+		<script defer type="text/javascript" src="../../app-cacheBust=VQrxFGp5WhJQS1DDFuwGxw==.js"></script>
